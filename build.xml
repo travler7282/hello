@@ -26,7 +26,11 @@
     <mkdir dir="${stage}"/>
 
     <!-- Put everything in ${build} into the MyProject-${DSTAMP}.jar file -->
-    <jar jarfile="${stage}/hello.jar" basedir="${build}"/>
+    <jar destfile="${stage}/hello.jar" basedir="${build}">
+    	<manifest>
+    		<attribute name="Main-Class" value="Hello" />
+    	</manifest>
+    </jar>
   </target>
 
   <target name="clean"
